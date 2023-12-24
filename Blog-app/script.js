@@ -1,9 +1,11 @@
 let add = document.querySelector('#add');
 let cross = document.querySelector('.fa-xmark')
-
 let from = document.querySelector('.from');
-
 let button = document.querySelector('button')
+let blog_url = document.querySelector('#blog_url');
+let blog_title = document.querySelector('#blog_title');
+let blog_description = document.querySelector('#blog_description');
+let blog_textarea = document.querySelector('#blog_textarea');
 
 add.addEventListener('click', function(){
     from.style.display = 'block';
@@ -16,12 +18,14 @@ cross.addEventListener('click', function(){
 
 })
 
-button.addEventListener('click', function(){
+button.addEventListener('click', function(e){
+  e.stopPropagation()
      // Get the data you want to store in JSON format (replace this with your own logic)
   const dataToStore = {
-    key1: 'value1',
-    key2: 'value2',
-    // ... add more properties as needed
+    blog_url: blog_url.value,
+    blog_title: blog_title.value,
+    blog_description: blog_description.value,
+    blog_textarea: blog_textarea.value 
   };
 
   // Convert the data to a JSON string
@@ -31,5 +35,7 @@ button.addEventListener('click', function(){
   localStorage.setItem('myDataKey', jsonData);
 
   // Optionally, you can also update the UI or perform other actions after storing the data
-   console.log(JSON.stringify(jsonData))
+  
+    console.log(jsonData.blog_url);
+ 
 })

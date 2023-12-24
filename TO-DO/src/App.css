@@ -1,0 +1,11 @@
+.nav-div{
+  max-width: 31vw;
+  margin: auto;
+  height: 50px;
+}
+
+.nav-div button{
+  padding: 5px;
+  width: 100px;
+}
+
